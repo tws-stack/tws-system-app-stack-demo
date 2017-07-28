@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 public class HelloWorldServiceTest {
 
     @Test
-    public void should_return_hello_world() throws Exception {
+    public void say_should_return_hello_world() throws Exception {
 
         HelloWorldService helloWorldService = new HelloWorldService();
 
