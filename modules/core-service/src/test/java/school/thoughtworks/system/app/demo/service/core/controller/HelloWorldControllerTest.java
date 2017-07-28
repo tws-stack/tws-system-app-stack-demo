@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import school.thoughtworks.system.app.demo.service.core.service.HelloWorldService;
 
-import static org.mockito.Mockito.when;
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,7 +27,7 @@ public class HelloWorldControllerTest {
     @Test
     public void should_return_hello_world() throws Exception {
 
-        when(helloWorldService.say()).thenReturn("Hello World!");
+        given(helloWorldService.say()).willReturn("Hello World!");
 
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
