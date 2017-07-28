@@ -12,6 +12,7 @@ import school.thoughtworks.system.app.demo.service.core.service.HelloWorldServic
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(HelloWorldController.class)
@@ -29,6 +30,7 @@ public class HelloWorldControllerTest {
         when(helloWorldService.say()).thenReturn("Hello World!");
 
         mvc.perform(get("/hello"))
+                .andExpect(status().isOk())
                 .andExpect(content().string("Hello World!"));
     }
 }

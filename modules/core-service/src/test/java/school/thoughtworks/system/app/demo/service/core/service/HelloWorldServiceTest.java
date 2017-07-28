@@ -4,8 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 public class HelloWorldServiceTest {
@@ -17,6 +16,6 @@ public class HelloWorldServiceTest {
 
         String result = helloWorldService.say();
 
-        assertThat(result, is("Hello World!"));
+        assertThat(result).isEqualTo("Hello World!");
     }
 }

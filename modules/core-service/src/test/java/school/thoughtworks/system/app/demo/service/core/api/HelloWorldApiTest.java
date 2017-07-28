@@ -9,8 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -23,7 +22,7 @@ public class HelloWorldApiTest {
     public void get_should_return_hello_world() throws Exception {
         ResponseEntity<String> entity = restTemplate.getForEntity("/hello", String.class);
 
-        assertThat(entity.getStatusCode(), is(HttpStatus.OK));
-        assertThat(entity.getBody(), is("Hello World!"));
+        assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(entity.getBody()).isEqualTo("Hello World!");
     }
 }
