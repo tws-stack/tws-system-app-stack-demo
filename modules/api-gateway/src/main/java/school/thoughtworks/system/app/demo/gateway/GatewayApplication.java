@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import school.thoughtworks.system.app.demo.gateway.filter.PostFilter;
 import school.thoughtworks.system.app.demo.gateway.filter.PreFilter;
 
 @EnableZuulProxy
@@ -17,5 +18,10 @@ public class  GatewayApplication {
     @Bean
     public PreFilter getPreFilter(){
         return new PreFilter();
+    }
+
+    @Bean
+    public PostFilter postFilter(){
+        return new PostFilter();
     }
 }
