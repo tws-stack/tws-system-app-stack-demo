@@ -22,4 +22,6 @@ public class HelloWorldServiceTest {
         String result = helloWorldService.say();
         assertThat(result).isEqualTo("Hello World!");
     }
+
 }
+
