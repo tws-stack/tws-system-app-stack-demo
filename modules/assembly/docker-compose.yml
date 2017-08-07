@@ -1,0 +1,14 @@
+version: "2"
+services:
+  nginx:
+    image: nginx:1.13.3
+    container_name: web
+    ports:
+      - 9999:80
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ../web/public/assert:/var/public/assert
+    networks:
+      main:
+networks:
+  main:
