@@ -26,7 +26,6 @@ public class ComputeControllerTest {
 
     @Test
     public void should_return_sum_answer() throws Exception {
-
         given(computeService.compute(1,2)).willReturn(3);
 
         this.mvc.perform(get("/compute?a=1&b=2"))
