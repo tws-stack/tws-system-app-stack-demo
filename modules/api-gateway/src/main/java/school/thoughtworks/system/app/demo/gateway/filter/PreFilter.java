@@ -18,7 +18,7 @@ public class PreFilter extends ZuulFilter{
     }
 
     public boolean shouldFilter(){
-      return true;
+      return false;
     }
 
     public int filterOrder() {

@@ -2,9 +2,6 @@ package school.thoughtworks.system.app.demo.gateway.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import com.sun.xml.internal.ws.client.ResponseContext;
-import javafx.geometry.Pos;
-import org.apache.http.protocol.ResponseContent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
